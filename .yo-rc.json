@@ -1,0 +1,43 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.microservicer.restaurant",
+      "nativeLanguage": "de"
+    },
+    "jhipsterVersion": "5.7.0",
+    "applicationType": "monolith",
+    "baseName": "gola",
+    "packageName": "com.microservicer.restaurant",
+    "packageFolder": "com/microservicer/restaurant",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "ehcache",
+    "enableHibernateCache": false,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "prodDatabaseType": "mysql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "gradle",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "ZTU5ZmNiM2VhYjU5ZTgxN2Y2OGZmZDg5MmRhM2U2YzdmYjcxMzVkZWU0MWY3OGU4NGIzNWY4OGNkZWQ5Njg0ZGFmNjJhMjI1OTlhMjA5ZTc3NjgyNmY2M2ZiZGQ4Y2EwMWQyZDc0NGFiM2Q0OGQ0MDM0Zjg2OGU3YjQ3NDhlZGM=",
+    "clientFramework": "angularX",
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "testFrameworks": [
+      "gatling",
+      "cucumber",
+      "protractor"
+    ],
+    "jhiPrefix": "jhi",
+    "otherModules": [],
+    "enableTranslation": true,
+    "nativeLanguage": "de",
+    "languages": [
+      "de",
+      "et"
+    ]
+  }
+}
