@@ -1,0 +1,23 @@
+{
+    "golaApp": {
+        "cat": {
+            "home": {
+                "title": "Cats",
+                "createLabel": "Cat erstellen",
+                "createOrEditLabel": "Cat erstellen oder bearbeiten"
+            },
+            "created": "Cat erstellt mit ID {{ param }}",
+            "updated": "Cat aktualisiert mit ID {{ param }}",
+            "deleted": "Cat gelöscht mit ID {{ param }}",
+            "delete": {
+                "question": "Soll Cat {{ id }} wirklich dauerhaft gelöscht werden?"
+            },
+            "detail": {
+                "title": "Cat"
+            },
+            "name": "Name",
+            "price": "Price",
+            "author": "Author"
+        }
+    }
+}
