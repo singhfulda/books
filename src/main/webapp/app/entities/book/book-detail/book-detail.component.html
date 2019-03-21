@@ -1,0 +1,9 @@
+<form>
+  <input [(ngModel)] = "book.name" type="text" name="name"/>
+  <input [(ngModel)] = "book.price" type="number" name="price"/>
+  <input [(ngModel)] = "book.author" type="text" name="author"/>
+  <input [(ngModel)] = "book.pages" type="number" name="pages"/>
+  <button *ngIf= "book.id" (click) = "update()"> Submit</button>
+  <button (click) = "delete()"> Delete</button>
+  <button *ngIf= "!book.id" (click) = "create()"> Create</button>
+</form>
