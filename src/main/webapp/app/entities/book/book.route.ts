@@ -4,6 +4,7 @@ import { Routes } from '@angular/router';
 import { JhiResolvePagingParams } from 'ng-jhipster';
 import { UserRouteAccessService } from 'app/core';
 import { BookComponent } from 'app/entities/book/book.component';
+import { BookDetailComponent } from './book-detail/book-detail.component';
 
 export const bookRoute: Routes = [
     {
@@ -18,5 +19,11 @@ export const bookRoute: Routes = [
             pageTitle: 'golaApp.cat.home.title'
         },
         canActivate: [UserRouteAccessService]
+    },
+    {
+        path: 'book/:id',
+        component: BookDetailComponent,
+        canActivate: [UserRouteAccessService]
     }
+
 ];

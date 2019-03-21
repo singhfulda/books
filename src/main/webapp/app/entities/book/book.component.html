@@ -1,17 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-
 <h2>Golas Books</h2>
 
-<ul *ngFor="let book of books">
-    <li>{{book.name}}</li>
-</ul>
+<div class="list-group">
+  <div class="list-group-item" *ngFor="let book of books">
+          
+        <div class="d-flex w-100 justify-content-between">           
+           
+            <h1 class="mb-1"> {{book.name}}</h1>
+            <small>{{book.price}}</small>
+            <h5>By:</h5>{{book.author}}
+            <button  [routerLink]="['/book', book.id]" type="button" class="btn btn-default btn-sm">
+                Edit
+                 <span class="glyphicon glyphicon-pencil"></span>
+            </button>
+        </div>
+    </div>
+</div>
 
-</body>
-</html>
+
