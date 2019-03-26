@@ -14,7 +14,4 @@
             <column name="price" type="DECIMAL(19, 2)"/>
         </createTable>
     </changeSet>
-    <changeSet author="hs (generated)" id="1552590757978-3">
-        <dropTable tableName="JHI_DATE_TIME_WRAPPER"/>
-    </changeSet>
 </databaseChangeLog>
