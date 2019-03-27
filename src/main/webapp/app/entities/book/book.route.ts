@@ -25,5 +25,4 @@ export const bookRoute: Routes = [
         component: BookDetailComponent,
         canActivate: [UserRouteAccessService]
     }
-
 ];

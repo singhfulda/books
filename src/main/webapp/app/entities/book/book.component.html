@@ -1,20 +1,57 @@
-<h2>Golas Books</h2>
-<button [routerLink]="['/book', 'new']">New</button>
-<div class="list-group">
-  <div class="list-group-item" *ngFor="let book of books">
-          
-        <div class="d-flex w-100 justify-content-between">           
-           
-            <h1 class="mb-1"> {{book.name}}</h1>
-            <small>{{book.price}}</small>
-            <h5>By:</h5>{{book.author}}
-            <button  [routerLink]="['/book', book.id]" type="button" class="btn btn-default btn-sm">
-                Edit
-                 <span class="glyphicon glyphicon-pencil"></span>
-            </button>
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="golaApp.book.home.title">Books</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-book" [routerLink]="['/book/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="golaApp.book.home.createLabel">
+            Create new Book
+            </span>
+        </button>
+    </h2>
+    <!--<jhi-alert></jhi-alert>-->
+    <br/>
+    <div class="table-responsive" *ngIf="books">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+                <th><span jhiTranslate="golaApp.book.name">Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+                <th><span jhiTranslate="golaApp.book.price">Price</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+                <th><span jhiTranslate="golaApp.book.author">Author</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let book of books ;trackBy: trackId">
+                <td><a [routerLink]="['/book', book.id, 'view' ]">{{book.id}}</a></td>
+                <td>{{book.name}}</td>
+                <td>{{book.price}}</td>
+                <td>{{book.author}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/book', book.id ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+
+                        <button
+                                (click) = "delete(book.id)"
+                                class="btn btn-primary"> Delete
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="books && books.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="queryCount" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
         </div>
     </div>
-
 </div>
-
-
